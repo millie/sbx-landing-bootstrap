@@ -37,6 +37,14 @@ Set up Heroku App
 Follow the instructions here: [Heroku.com](http://www.heroku.com/)
 you may need to do this the first time: https://devcenter.heroku.com/articles/keys
 
+
+Add your domain name
+----------------------------------------
+	$ heroku domains:add www.example.com
+
+Go to your registrar and add a CNAME record for example.com and www.example.com pointing to myapp.herokuapp.com
+
+
 Deploy the splash page
 ======================
 Make a Heroku Account
@@ -63,4 +71,11 @@ $ heroku config:add DOMAIN_NAME=my-domain-name-here
 Add New Relic monitoring (prevents pages from idling 
 ------------------------------------------------------------
   $ heroku addons:add newrelic:standard
+  
+Open the New Relic interface:
+
+  $ heroku addons:open newrelic
+  
+Under Menu, inside the Reports section, find Availability.
+Add your URL, set a ping time of < 1 hour.
 
